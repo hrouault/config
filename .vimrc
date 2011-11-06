@@ -1,28 +1,70 @@
-call pathogen#infect()
+set nocompatible
 
-set ts=3
-set sw=3
-set smarttab
-set expandtab
-set softtabstop=3
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
-set hlsearch
+set modelines=0
 
-syntax on
+set encoding=utf-8
 
-if has("autocmd")
-  filetype indent on
-endif
-filetype plugin on
-
-set showcmd		" Show (partial) command in status line.
+set showmode   "always show mode
+set number
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
+set smarttab
+set scrolloff=4
+set hlsearch
+
+set visualbell
+set cursorline
+
+set relativenumber
+
+
+"change vim regiex handling
+nnoremap / /\v
+vnoremap / /\v
+
+set gdefault
+
+" leader commands
+let mapleader=","
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>q gqip
+nnoremap <leader>q gqip
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <tab> %
+vnoremap <tab> %
+
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+
+"makes j and k behaves by screen lines
+nnoremap j gj
+nnoremap k gk
+
+set ts=2
+set sw=2
+set expandtab
+set softtabstop=2
+
+
+syntax on
+
+set showcmd		" Show (partial) command in status line.
 set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 set ruler
-set number
 
 
 " Define shell as zsh
@@ -35,6 +77,7 @@ map <A-i> i <ESC>r
 set complete+=k
 
 set wildmenu
+set wildmode=list:longest
 set wildignore=*.bak,*.o,*.e,*~
 
 set foldmethod=syntax
@@ -53,6 +96,7 @@ au BufRead ~/.tmp/mutt* set tw=72
 let g:tex_flavor="latex"
 let g:Tex_ViewRule_pdf='open -a Preview'
 
+" for Mac C-]
 nmap <C-R> <C-]>
 
 function ModeChange()
@@ -69,3 +113,5 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/@(usr|bin|opt)/" |
 
 
 set ofu=syntaxcomplete#Complete
+
+
