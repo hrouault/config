@@ -8,4 +8,7 @@ macm Window.Select\ Next\ Tab      key=<D-Right>
 set guifont=Menlo\ Regular:h12
 " font
 
+"color theme
+colorscheme mustang
+
 

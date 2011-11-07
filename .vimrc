@@ -55,8 +55,8 @@ set sw=2
 set expandtab
 set softtabstop=2
 
-"fix for french keyboard
-map <C-m> <C-]>
+"fix for french keyboard   Breaks the command-line window
+" noremap <C-m> <C-]>
 
 
 syntax on
@@ -111,9 +111,6 @@ let g:Tex_ViewRule_pdf='open -a Preview'
 
 set ofu=syntaxcomplete#Complete
 
-"color theme
-colorscheme mustang
-
 "mapping for ctags
 map <C-F12> :!/usr/local/bin/ctags -R .<CR>
 
@@ -136,3 +133,7 @@ set completeopt=menuone,menu,longest,preview
 " vim-pad
 let g:pad_dir="~/notes"
 
+" command-line window is better by default
+nnoremap : q:i
+nnoremap / q/i
+nnoremap ? q?i
