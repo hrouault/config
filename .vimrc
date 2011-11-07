@@ -114,4 +114,7 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/@(usr|bin|opt)/" |
 
 set ofu=syntaxcomplete#Complete
 
+"color theme
+colorscheme mustang
+
 
