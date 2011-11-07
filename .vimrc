@@ -135,3 +135,4 @@ set completeopt=menuone,menu,longest,preview
 
 " vim-pad
 let g:pad_dir="~/notes"
+
