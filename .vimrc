@@ -34,15 +34,12 @@ set gdefault
 let mapleader=","
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>q gqip
-nnoremap <leader>q gqip
-nnoremap <leader>w <C-w>v<C-w>l
+vnoremap <leader>q gqip
+nnoremap <leader>w :let &columns +=80<CR><C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-nnoremap <tab> %
-vnoremap <tab> %
 
 set wrap
 set textwidth=79
@@ -57,6 +54,9 @@ set ts=2
 set sw=2
 set expandtab
 set softtabstop=2
+
+"fix for french keyboard
+map <C-m> <C-]>
 
 
 syntax on
@@ -93,12 +93,6 @@ au BufRead ~/.tmp/mutt* set tw=72
 "Doesn't work!!
 "au BufWritePost * if getline(1) =~ "^#!\/bin" | silent !chmod a+x <afile> | endif
 
-let g:tex_flavor="latex"
-let g:Tex_ViewRule_pdf='open -a Preview'
-
-" for Mac C-]
-nmap <C-R> <C-]>
-
 function ModeChange()
    if getline(1) =~ "^#!"
       if getline(1) =~ "/bin/"
@@ -111,10 +105,33 @@ au bufwritepost * call ModeChange()
 
 au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/@(usr|bin|opt)/" | silent !chmod a+x <afile> | endif | endif
 
+let g:tex_flavor="latex"
+let g:Tex_ViewRule_pdf='open -a Preview'
+
 
 set ofu=syntaxcomplete#Complete
 
 "color theme
 colorscheme mustang
 
+"mapping for ctags
+map <C-F12> :!/usr/local/bin/ctags -R .<CR>
 
+" tags for c++ std lib
+set tags+=~/.vim/tags/cpp
+
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+
+" vim-pad
+let g:pad_dir="~/notes"
