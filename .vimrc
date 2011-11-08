@@ -41,6 +41,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" ctags command
+nnoremap <leader>ct :!/usr/local/bin/ctags -R .<cr>
+
 set wrap
 set textwidth=79
 set formatoptions=qrn1
@@ -57,6 +60,8 @@ set softtabstop=2
 
 "fix for french keyboard   Breaks the command-line window
 " noremap <C-m> <C-]>
+noremap <C-^> <C-]>
+
 
 
 syntax on
@@ -137,3 +142,7 @@ let g:pad_dir="~/notes"
 nnoremap : q:i
 nnoremap / q/i
 nnoremap ? q?i
+
+"c and c++ makeprg
+au FileType c,cpp set makeprg=make\ -C\ ../build\ $*\ 2>&1\\\|sed\ 's,\.\./src,src,g'
+
