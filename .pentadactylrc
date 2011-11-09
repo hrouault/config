@@ -1,0 +1,1 @@
+set editor='/usr/local/bin/mvim -g -f +<line> +"sil! call cursor(0, <column>)" <file>'
