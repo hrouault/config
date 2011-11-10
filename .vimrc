@@ -23,12 +23,28 @@ set cursorline
 
 set relativenumber
 
+set backspace=indent,eol,start " make backspace a more flexible
 
-"change vim regiex handling
+"change vim regex handling
 nnoremap / /\v
 vnoremap / /\v
 
 set gdefault
+
+" 3 scrolling mapping
+noremap <S-space> <C-u>
+noremap <space> <C-d>
+
+" Make Arrow Keys Useful Again {
+map <left> <ESC>:tabp<CR>
+map <right> <ESC>:tabp<CR>
+map <down> <ESC>:bn<RETURN>
+map <up> <ESC>:bp<RETURN>
+
+map <left> <ESC>:bn<RETURN>
+map <left> <ESC>:NERDTreeToggle<RETURN>
+map <right> <ESC>:Tlist<RETURN>
+map <up> <ESC>:bp<RETURN>
 
 " leader commands
 let mapleader=","
@@ -81,10 +97,6 @@ map <A-i> i <ESC>r
 
 set complete+=k
 
-set wildmenu
-set wildmode=list:longest
-set wildignore=*.bak,*.o,*.e,*~
-
 set foldmethod=syntax
 set foldcolumn=4
 set foldlevel=5
@@ -116,9 +128,6 @@ let g:Tex_ViewRule_pdf='open -a Preview'
 
 set ofu=syntaxcomplete#Complete
 
-"mapping for ctags
-map <C-F12> :!/usr/local/bin/ctags -R .<CR>
-
 " tags for c++ std lib
 set tags+=~/.vim/tags/cpp
 
@@ -135,12 +144,19 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
+
+
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.bak,*.o,*.e,*~
+
+
 " vim-pad
 let g:pad_dir="~/notes"
 
 " command-line window is better by default
 nnoremap : q:i
-nnoremap / q/i
+" nnoremap / q/i
 nnoremap ? q?i
 
 "c and c++ makeprg
