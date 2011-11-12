@@ -49,8 +49,6 @@ map <up> <ESC>:bp<RETURN>
 " leader commands
 let mapleader=","
 nnoremap <leader><space> :noh<cr>
-nnoremap <leader>q gqip
-vnoremap <leader>q gqip
 nnoremap <leader>w :let &columns +=80<CR><C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -63,16 +61,16 @@ nnoremap <leader>ct :!/usr/local/bin/ctags -R .<cr>
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=80
 
 "makes j and k behaves by screen lines
 nnoremap j gj
 nnoremap k gk
 
-set ts=2
-set sw=2
+set ts=4
+set sw=4
 set expandtab
-set softtabstop=2
+set softtabstop=4
 
 "fix for french keyboard   Breaks the command-line window
 " noremap <C-m> <C-]>
@@ -161,4 +159,8 @@ nnoremap ? q?i
 
 "c and c++ makeprg
 au FileType c,cpp set makeprg=make\ -C\ ../build\ $*\ 2>&1\\\|sed\ 's,\.\./src,src,g'
+
+au FileType python set ts=4
+au FileType python set sw=4
+au FileType python set softtabstop=4
 
