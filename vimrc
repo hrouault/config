@@ -122,6 +122,8 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/@(usr|bin|opt)/" |
 
 let g:tex_flavor="latex"
 let g:Tex_ViewRule_pdf='open -a Preview'
+" for latex:
+set iskeyword+=:
 
 
 set ofu=syntaxcomplete#Complete
