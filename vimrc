@@ -85,6 +85,8 @@ set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 set ruler
 
+set autochdir
+
 
 " Define shell as zsh
 set shell=/bin/zsh
