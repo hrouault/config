@@ -9,6 +9,7 @@ set guifont=Menlo\ Regular:h12
 " font
 
 "color theme
-colorscheme mustang
+set background=dark
+colorscheme solarized
 
 

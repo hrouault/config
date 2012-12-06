@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/rouault/hydro-ssh/simuthick-versioned'
 let g:netrw_dirhist_2='/usr/X11/include/freetype2'
 let g:netrw_dirhist_3='/Users/rouault/postdoc/tempcontrol/coyotte/fonts/liberation-fonts-ttf-1.07.1'
+let g:netrw_dirhist_4='/Volumes/chklovskii$/rouaulth/postdoc/confs/cosyne-13'
+let g:netrw_dirhist_5='/Users/rouaulth/config/.git'
