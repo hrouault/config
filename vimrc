@@ -135,7 +135,7 @@ set ofu=syntaxcomplete#Complete
 
 let g:clang_use_library = 1
 let g:clang_snippets = 1
-let g:clang_snippets_engine = 'snipmate'
+let g:clang_snippets_engine = 'ultinips'
 
 set wildmenu
 set wildmode=list:longest
