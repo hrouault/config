@@ -1,0 +1,43 @@
+snippet art "Article template" !b
+\documentclass{article}
+
+\usepackage[top=1.5in, bottom=1.5in, left=1.5in, right=1.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{$1}
+
+\author{Hervé Rouault}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is the paper's abstract \ldots
+\end{abstract}
+
+\section{Introduction}
+
+\paragraph{Outline}
+
+\section{Previous work}\label{previous work}
+
+\section{Results}\label{results}
+
+\section{Conclusions}\label{conclusions}
+
+%\bibliographystyle{abbrv}
+%\bibliography{main}
+
+\end{document}
+endsnippet
+
+snippet fig "Insert a figure" !b
+\begin{figure}[h!]
+  \caption{$1}
+  \centering
+    \includegraphics[width=0.6\textwidth]{$2}
+\end{figure}
+endsnippet

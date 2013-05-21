@@ -66,6 +66,7 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=80
 
+
 "makes j and k behaves by screen lines
 nnoremap j gj
 nnoremap k gk
@@ -133,9 +134,20 @@ set iskeyword+=:
 
 set ofu=syntaxcomplete#Complete
 
+let g:UltiSnipsEditSplit = 'horizontal'
+
+" set conceallevel=2
+" set concealcursor=vin
+
 let g:clang_use_library = 1
 let g:clang_snippets = 1
-let g:clang_snippets_engine = 'ultinips'
+" let g:clang_conceal_snippets=1
+let g:clang_snippets_engine = 'ultisnips'
+
+let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
+
+" Deactivate c-support <c-j> for ultisnips
+let g:C_Ctrl_j   = 'off'
 
 set wildmenu
 set wildmode=list:longest

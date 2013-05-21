@@ -4,3 +4,9 @@
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
 	url = git@github.com:jcf/vim-latex.git
+[submodule "vim/bundle/vim-ultisnips"]
+	path = vim/bundle/vim-ultisnips
+	url = git@github.com:vim-scripts/UltiSnips.git
+[submodule "vim/bundle/atp-vim-code"]
+	path = vim/bundle/atp-vim-code
+	url = git://git.code.sf.net/p/atp-vim/code
