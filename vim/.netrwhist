@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/rouaulth/.muttator'
 let g:netrw_dirhist_2='/Users/rouaulth/perso/raspberry/freebsd/crochet-freebsd/board/RaspberryPi/mkimage'
 let g:netrw_dirhist_3='/usr/local/Cellar/avr-libc/1.8.0/share/doc/avr-libc-1.8.0/examples/stdiodemo'
+let g:netrw_dirhist_4='/Users/rouaulth/.oh-my-zsh'

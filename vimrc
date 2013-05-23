@@ -172,3 +172,6 @@ au FileType python set softtabstop=4
 set background=dark
 colorscheme solarized
 
+" Required by vim-latex (see its doc)
+set grepprg=grep\ -nH\ $*
+
