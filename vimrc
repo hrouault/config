@@ -175,3 +175,13 @@ colorscheme solarized
 " Required by vim-latex (see its doc)
 set grepprg=grep\ -nH\ $*
 
+" syntastic flags
+let g:syntastic_c_compiler = 'clang'
+
+" status line
+set laststatus=2 " Always display the statusline in all windows
+set noshowmode " Hide the default mode text
+               " (e.g. -- INSERT -- below the statusline)
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
