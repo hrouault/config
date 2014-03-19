@@ -104,6 +104,10 @@ set complete+=k
 set foldmethod=syntax
 set foldcolumn=4
 set foldlevel=5
+" remap space to toggle folds
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
 
 au BufRead ~/.tmp/mutt* set tw=72
 
